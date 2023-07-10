@@ -41,7 +41,7 @@ public class EditActivity extends AppCompatActivity {
                 data.setNoteContent(etContent.getText().toString());
                 dbh.updateNote(data);
                 dbh.close();
-                returnActivity();
+                finish();
             }
         });
 
@@ -50,16 +50,11 @@ public class EditActivity extends AppCompatActivity {
             public void onClick(View v) {
                 DBHelper dbh = new DBHelper(EditActivity.this);
                 dbh.deleteNote(data.getId());
-                returnActivity();
+                finish();
             }
         });
 
 
     }
-
-    private void returnActivity(){
-        Intent i = new Intent(EditActivity.this,
-                MainActivity.class);
-        startActivity(i);
-    }
+    
 }
