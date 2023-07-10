@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     aa.notifyDataSetChanged();
                     Toast.makeText(MainActivity.this, "Insert successful",
                             Toast.LENGTH_SHORT).show();
+                    dbh.close();
                 }
             }
         });
@@ -71,8 +72,8 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     al.addAll(dbh.getAllNotes(filterText));
                 }
-
                 aa.notifyDataSetChanged();
+                dbh.close();
             }
         });
 

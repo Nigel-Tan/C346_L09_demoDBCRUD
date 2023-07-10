@@ -50,11 +50,12 @@ public class EditActivity extends AppCompatActivity {
             public void onClick(View v) {
                 DBHelper dbh = new DBHelper(EditActivity.this);
                 dbh.deleteNote(data.getId());
+                dbh.close();
                 finish();
             }
         });
 
 
     }
-    
+
 }
